@@ -28,13 +28,13 @@ class Dude(WidgetDrawer):
     def check_move(self):
         """Checks if move is inside Window."""
         if self.x <= 0 and self.move_x < 0\
-        or self.x >= Window.size[0] and self.move_x > 0:
+        or self.x >= Window.size[0] - self.size[0] and self.move_x > 0:
             print("Target X outside window.")
         else:
             self.move_on_x_axis()
 
         if self.y <= 0 and self.move_y < 0\
-        or self.y >= Window.size[1] and self.move_y > 0:
+        or self.y >= Window.size[1] - self.size[1] and self.move_y > 0:
             print("Target Y outside window.") 
         else:
             self.move_on_y_axis()
